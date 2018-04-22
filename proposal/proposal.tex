@@ -1,0 +1,81 @@
+\documentclass[12pt]{article}
+\usepackage{natbib,amsmath,amsfonts,fullpage,hyphenat,booktabs,graphicx,setspace}
+\usepackage[colorlinks,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\onehalfspacing
+\setcitestyle{square,comma,super}
+\title{Project Proposal\\Robot Manipulation}
+\author{Hossam Mohamed \\ Vajra Ganesh \\Dharmin Bakaraniya}
+\begin{document}
+\maketitle{}
+\section{Introduction}
+"The ability of a robotic manipulator to grasp and manipulate objects depends on the kinematic structure of the arm, on its location in the physical space, on the relative location of the objects with respect to the arm, and on environmental restrictions".\cite{intro}
+And our task here is that, given an area with objects that need to be manipulated,we will have to find out which is the best position and orientation for the robot so that the biggest number of objects can be reached in its dexterous workspace
+
+\subsection{Team name}
+ManipulatOIR
+\subsection{Project title}
+Optimal Inverse Reachability
+\subsection{Names of members}
+        \begin{tabular}{|c|c|}
+                \hline
+                \textbf{Name} & \textbf{Git Id}\\\hline
+                Dharmin Bakaraniya & DharminB\\\hline
+                Vajra Ganeshkumar & vajrag\\\hline
+                Hossam Mohammed & Hibrahim1\\\hline
+        \end{tabular}
+
+\section{Available software packages (or available approaches)}
+\begin{itemize}
+        \item Reuleaux\cite{makhal}\cite{reuleaux}
+        \item Extend move\_base\_to\_manip\cite{movebasetomanip}
+        \item Implementing our own wrapper on \textit{Moveit!} using concepts of \cite{malek} \cite{park} or \cite{rastegar}
+\end{itemize}
+Our research provided us only one ready to use package. According to a ROS forum question\cite{rosquestion} Reuleaux is the only package available for Optimal inverse reachability.
+\section{A small qualitative comparison}
+\begin{table}[htpb]
+        \centering
+        \caption{Qualitative Analysis}
+        \label{tab:qualAna}
+        \begin{tabular}{|c|c|c|}\hline
+                \textbf{Reuleaux} & \textbf{Extention} & \textbf{Our Wrapper}\\\hline
+                C++ & Python & Python\\\hline
+                moveit\_ikfast & moveit & moveit \\\hline
+                ready to use & Not implemented & Not implemented \\\hline
+        %\hline
+        \end{tabular}
+\end{table}
+\section{2 Best approach}
+\begin{enumerate}
+        \item Reuleaux
+        \item Extend move\_base\_to\_manip
+\end{enumerate}
+\section{Work plan}
+\subsection{Goals and checkpoints}
+\begin{itemize}
+        \item Figure out Reuleaux package and how to use it
+        \item Figure out move\_base\_to\_manip and how to use it
+        \item Build an extension for move\_base\_to\_manip
+        \item Run these in simulation
+        \item Run these on real youbot
+\end{itemize}
+\subsection{By when does it need to be done}
+\begin{itemize}
+\item By the end of April, we will finish some literature reading related to the topic.
+\item In May: Design our software and/or figure out available software packages
+\item By the end of June 2nd Week -Testing software on simulation and actual robot.
+\end{itemize}
+\subsection{Who is the responsible person for it}
+All the team members will work on literature survey. Reuleaux package will be tested by Vajra. The programming for extention will be done using Pair programming in order to minimize errors and maximize productivity. Testing will be done individually on simulation. Testing on real robot will be done while everyone is present.
+\begin{thebibliography}{1}
+        \bibitem{intro}Porges, Oliver, et al. "Reachability and Dexterity: Analysis and Applications for Space Robotics." Workshop on Advanced Space Technologies for Robotics and Automation-ASTRA. 2015.
+        \bibitem{malek}Abdel-Malek, Karim, Wei Yu, and Jingzhou Yang. "Placement of robot manipulators to maximize dexterity." International Journal of Robotics and Automation 19.1 (2004): 6-14.
+        \bibitem{park}Park, F.C.; Brockett, R.W., “Kinematic dexterity of robotic mechanisms”, International
+Journal of Robotics Research, v 13 n 1 Feb 1994 p 1-15
+\bibitem{makhal}Makhal, Abhijit, and Alex K. Goins. "Reuleaux: Robot Base Placement by Reachability Analysis." 2018 Second IEEE International Conference on Robotic Computing (IRC). IEEE, 2018.
+\bibitem{rastegar}Rastegar, J.; Singh, J.R., 1994, “New probabilistic method for the performance evaluation
+of manipulators”, ASME Journal of Mechanical Design, v 116 n 2, pp. 462-466.
+\bibitem{rosquestion}\href{https://answers.ros.org/question/261304/what-packages-apart-from-reuleaux-can-be-used-for-optimal-base-positioning-of-a-robot-for-mobile-manipulation/}{Ros forum question for inverse reachability} 
+\bibitem{movebasetomanip}\href{http://wiki.ros.org/move_base_to_manip}{ros move\_base\_to\_manip}
+\bibitem{reuleaux}\href{http://wiki.ros.org/reuleaux}{ros reuleaux}
+\end{thebibliography}
+\end{document}
