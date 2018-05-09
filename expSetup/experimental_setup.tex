@@ -1,0 +1,47 @@
+\documentclass[12pt]{article}
+\usepackage{natbib,amsmath,amsfonts,fullpage,hyphenat,booktabs,graphicx,setspace}
+\usepackage[colorlinks,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\onehalfspacing{}
+\setcitestyle{square,comma,super}
+\title{Robot Manipulation\\Optimal inverse reachability\\Experimental Setup \& Methodology}
+\author{Vajra Ganesh\\Hossam Mohamed\\Dharmin Bakaraniya}
+\begin{document}
+\maketitle{}
+
+\section{Description of the platform}%
+\label{sec:description_of_the_platform}
+\begin{itemize}
+    \item \textbf{Robot}: Youbot\cite{youbot}
+    \item \textbf{Computer running the software}: Internal PC of youbot with replaced Intel Core i5 processor.
+    \item \textbf{Camera}: RGB-D camera (Intel Realsense F200)
+    \item \textbf{Objects}: at work objects (Nuts, Bolts, Bearing, F20)
+    \item \textbf{Surface}: at work workspaces
+    \item \textbf{Software}:
+        \begin{itemize}
+            \item \textbf{Perception}: \texttt{mcr\_object\_recognition\_bounding\_box} from b-it-bots mas\_common\_robotics\cite{gitRepo}
+            \item \textbf{Manipulation}: \texttt{mcr\_moveit\_client} in b-it-bots mas\_common\_robotics\cite{gitRepo}
+            \item \textbf{Navigation}: \texttt{mir\_2dnav} in b-it-bots in mas\_industrial\_robotics\cite{gitRepoMir}
+        \end{itemize}
+\end{itemize}
+
+\section{Evaluation Procedure}
+\begin{itemize}
+    \item \textbf{Time}: We evaluate the approach based on  $\Delta t$, where $\Delta t$ is the time taken by the approach to compute the pose of the robot to manipulate the objects, once those location of the objects is determined.
+    \item \textbf{Number of object}: We evaluate the approach based on the number of objects that the approach can computationally handle.
+    \item \textbf{Number of base pose}: We evaluate the approach based on the number of objects that the robot can manipulate in one distinct base pose.
+\end{itemize}
+
+\section{Ground truth}
+\begin{itemize}
+    \item Preception, manipulation and navigation stack works as expected.
+    \item The reachability of the gripper to the object is same as manipulability of that object.
+    \item The locations of the objects received by the approach remain static till it is manipulated.
+\end{itemize}
+
+\begin{thebibliography}{1}
+    \bibitem{youbot}\href{http://www.youbot-store.com/wiki/index.php/YouBot_Detailed_Specifications}{Youbot description}
+    \bibitem{gitRepo}\href{http://www.github.com/b-it-bots/mas_common_robotics}{MAS common robotics}
+    \bibitem{gitRepoMir}\href{https://github.com/b-it-bots/mas_industrial_robotics}{MAS industrial robotics}
+    
+\end{thebibliography}
+\end{document}
